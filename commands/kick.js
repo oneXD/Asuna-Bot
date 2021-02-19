@@ -69,7 +69,7 @@ module.exports = {
     
         let target = message.guild.members.cache.get(mid)
     
-        //target.kick()
+      target.kick()
     
         client.channels.cache.get(sendchannel).send(embed)
 

@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 const Canvas = require('canvas');
-const { registerFont } = require('canvas');
-registerFont('./data/impact.ttf', { family: 'impact' });
 
 module.exports = {
     info: {
@@ -23,7 +21,6 @@ module.exports = {
             ctx.strokeRect(0, 0, canvas.width, canvas.height)
         
             // Select the font size and type from one of the natively available fonts
-            ctx.font = '120px impact';
             // Select the style that will be used to fill the text in
             ctx.fillStyle = '#ffffff';
             // Actually fill the text with a solid color

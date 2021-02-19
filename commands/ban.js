@@ -69,7 +69,7 @@ run: async function (client, message, args) {
 
     let target = message.guild.members.cache.get(mid)
 
-    //target.ban()
+    target.ban()
 
     client.channels.cache.get(sendchannel).send(embed)
     

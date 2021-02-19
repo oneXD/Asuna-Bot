@@ -1,7 +1,18 @@
 const Discord = require('discord.js')
 
 module.exports = async (client, message) => {
-  if (message.mentions.has(client.user)) {
+
+  if (message.author.bot) return;
+
+  //Prefixes also have mention match
+  const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
+  const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : client.config.prefix;
+
+  if (message.content.indexOf(prefix) !== 0) return;
+
+  const arg2 = message.content.trim().split(/ +/g);
+
+  if (message.content.startsWith("<@809225623994236939>")) {
     let desc =
     `Olá ${message.author}, eu me chamo Asuna e eu sou apenas um simples bot para o Discord!
 
@@ -25,14 +36,6 @@ module.exports = async (client, message) => {
 
     message.channel.send(message.author, embed)
   }
-
-  if (message.author.bot) return;
-
-  //Prefixes also have mention match
-  const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
-  const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : client.config.prefix;
-
-  if (message.content.indexOf(prefix) !== 0) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   //Making the command lowerCase because our file name will be in lowerCase

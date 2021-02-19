@@ -5,7 +5,7 @@ module.exports = {
       name: "avatar",
       description: "avatar",
       usage: "[avatar]",
-      aliases: ["profile", "perfil", "imagem"],
+      aliases: ["imagem"],
     },
 
 run: async function (client, message, args) {

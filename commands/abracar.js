@@ -2,20 +2,18 @@ const Discord = require('discord.js')
 
 module.exports = {
     info: {
-      name: "tapa",
-      description: "tapa",
-      usage: "[tapa]",
-      aliases: ["slap"]
+      name: "abracar",
+      description: "abracar",
+      usage: "[abracar]",
+      aliases: ["abraçar", "huge"]
     },
     run: async function (client, message, args) {
-        let tapas = [
-            "https://media.tenor.com/images/c14ee746377c8d3b102b086fa21b9aa3/tenor.gif",
-            "https://media.tenor.com/images/3ee6c279dd97a1e97409a54dd90a1972/tenor.gif",
-            "https://media.tenor.com/images/52f290cc5e4d1d6672f80e1b479a895f/tenor.gif",
-            "https://media.tenor.com/images/1cf565212575201942e3202d9a58227c/tenor.gif",
-            "https://media.tenor.com/images/f938068f62bdc04eaa0db516f346aa91/tenor.gif",
-            "https://media.tenor.com/images/25ddd61a653f354f37e8570ce1131c52/tenor.gif",
-            "https://media.tenor.com/images/4fd6c3c17bf614da5ab13c3e8c10c0fd/tenor.gif",
+        let huges = [
+            "https://i.pinimg.com/originals/32/09/15/320915992153abde2070a076552344e7.gif",
+            "https://64.media.tumblr.com/8f0f157fb73a72633a307722c21d2778/f0b6a1d0bbcb97e0-75/s400x600/e2384fdbf25239d13b9b6dcf615152f392380668.gifv",
+            "https://i.pinimg.com/originals/5a/ac/62/5aac6270d9c29bb8c590c8d8c8162a21.gif",
+            "http://pa1.narvii.com/6899/6ab302dba5eba23634f513dad0760343abef3832r1-496-280_00.gif",
+            "https://i.pinimg.com/originals/b0/5d/9d/b05d9ddf76e6c18d4d52f327fd0d0c5d.gif"
     
         ];
     
@@ -28,8 +26,8 @@ module.exports = {
                 const auth = message.author.tag
                 const auth2 = message.mentions.users.first().username
                 let embed = new Discord.MessageEmbed()
-                    .setDescription(`<@${message.author.id}> Deu um tapa em <@${user.id}>`)
-                    .setImage(tapas[Math.floor(Math.random() * tapas.length)])
+                    .setDescription(`<@${message.author.id}> Abraçou <@${user.id}>`)
+                    .setImage(huges[Math.floor(Math.random() * huges.length)])
                     .setFooter(`Clique no 🔁 para retribuir`)
                     .setColor(`RED`)
                 message.channel.send(embed).then(async msg => {
@@ -43,9 +41,9 @@ module.exports = {
     
                     retribuirl.on('collect', r => {
                         const embedd = new Discord.MessageEmbed()
-                            .setDescription(`<@${user.id}> Deu um tapa em <@${message.author.id}>`)
-                            .setImage(tapas[Math.floor(Math.random() * tapas.length)])
-                            .setFooter(`BRIGA, BRIGA, BRIGA!`)
+                            .setDescription(`<@${user.id}> Abraçou de volta <@${message.author.id}>`)
+                            .setImage(huges[Math.floor(Math.random() * huges.length)])
+                            .setFooter(`Fofo`)
                             .setColor(`RED`)
                         message.channel.send(embedd)
     

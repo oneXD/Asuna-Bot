@@ -20,7 +20,7 @@ module.exports = {
     const exEmbed = new Discord.MessageEmbed()
     .setColor("#ff9900")
     .setTitle("Baixe o wallpaper Aqui")
-    setDescription(`${message.author} Seu novo wallpaper. \n caso queira apagar clica na reação`)
+    .setDescription(`${message.author} Seu novo wallpaper. \n caso queira apagar clica na reação`)
     .setURL(nekojson.url)
     .setImage(nekojson.url)
     .setFooter("algumas imagens podem conter nsfw clique em ❌ para apagar")
